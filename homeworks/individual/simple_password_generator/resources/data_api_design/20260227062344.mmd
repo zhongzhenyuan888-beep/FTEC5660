@@ -1,0 +1,14 @@
+
+classDiagram
+    class PasswordGenerator {
+        +__init__(use_uppercase: bool, use_numbers: bool, use_special: bool)
+        +generate(length: int) str
+    }
+    class CLI {
+        +parse_args() dict
+        +display_password(password: str)
+        +display_error(message: str)
+        +copy_to_clipboard(password: str)
+        +run()
+    }
+    PasswordGenerator <.. CLI : uses

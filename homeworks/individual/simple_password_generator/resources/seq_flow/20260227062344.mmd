@@ -1,0 +1,17 @@
+
+sequenceDiagram
+    participant U as User
+    participant CLI as CLI
+    participant PG as PasswordGenerator
+    U->>CLI: run()
+    CLI->>CLI: parse_args()
+    CLI->>PG: __init__(use_uppercase, use_numbers, use_special)
+    CLI->>PG: generate(length)
+    PG-->>CLI: password
+    CLI->>CLI: display_password(password)
+    alt If --copy flag is set
+        CLI->>CLI: copy_to_clipboard(password)
+    end
+    alt If invalid input
+        CLI->>CLI: display_error(message)
+    end

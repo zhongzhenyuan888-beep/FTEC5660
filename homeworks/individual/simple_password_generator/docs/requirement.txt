@@ -1,0 +1,1 @@
+Create a simple Python command-line password generator.
